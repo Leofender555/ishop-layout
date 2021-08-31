@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>IShop - layout</title>
+  	<link href="static/css/bootstrap.css" rel="stylesheet">
+  	<link href="static/css/bootstrap-theme.css" rel="stylesheet">
+  	<link href="static/css/font-awesome.css" rel="stylesheet">
+  	<link href="static/css/app.css" rel="stylesheet">
+  </head>
+  <body>
+  	<header>
+  		<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ishopNav" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="products.html">IShop</a>
+          </div>
+          <div class="collapse navbar-collapse" id="ishopNav">
+            <ul id="currentShoppingCart" class="nav navbar-nav navbar-right hidden">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i> Корзина (<span class="total-count">0</span>)<span class="caret"></span>
+                </a>
+                <div class="dropdown-menu shopping-cart-desc">
+                  Общее количество: <span class="total-count">0</span><br>
+                  Общая цена: <span class="total-cost">0</span><br>
+                  <a href="shopping-cart.html" class="btn btn-primary btn-block">Посмотреть корзину</a>
+                </div>
+              </li>
+            </ul>
+            <a href="#" class="btn btn-primary navbar-btn navbar-right sign-in"><i class="fa fa-facebook-official" aria-hidden="true"></i> Вход</a>
+          </div>
+        </div>
+      </nav>
+  	</header>
+
+  	<div class="container-fluid">
+  		<div class="row">
+  			<aside class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+          <div class="visible-xs-block xs-option-container">
+            <a class="pull-right" data-toggle="collapse" href="#productCatalog">Каталог продуктов <span class="caret"></span></a>
+            <a data-toggle="collapse" href="#findProducts">Найти продукт <span class="caret"></span></a>
+          </div>
+          <!-- Search form -->
+          <form class="search" action="products.html">
+            <div id="findProducts" class="panel panel-success collapse">
+              <div class="panel-heading">Найти продукт</div>
+              <div class="panel-body">
+                <div class="input-group">
+                  <input type="text" name="query" class="form-control" placeholder="Search query">
+                  <span class="input-group-btn">
+                    <a id="goSearch" class="btn btn-default">Найти</a>
+                  </span>
+                </div>
+                <div class="more-options">
+                  <a data-toggle="collapse" href="#searchOptions">Фильтры <span class="caret"></span></a>
+                </div>
+              </div>
+              <div id="searchOptions" class="collapse">
+                <div class="panel-heading">Категории</div>
+                <div class="panel-body categories">
+                  <label> <input type="checkbox" id="allCategories"> Все </label>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="category" value="1" class="search-option">E-book (2)</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="category" value="2" class="search-option">Smartphone (6)</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="category" value="3" class="search-option">Tablet (4)</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-heading">Производитель</div>
+                <div class="panel-body producers">
+                  <label> <input type="checkbox" id="allProducers"> Все </label>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="1" class="search-option">Apple (3) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="2" class="search-option">Honor (1) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="3" class="search-option">Huawei (2) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="4" class="search-option">Lenovo (1) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="5" class="search-option">PocketBook (2) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="6" class="search-option">Samsung (2) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="7" class="search-option">Xiaomi (1) </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- /Search form -->
+          <!-- Categories -->
+          <div id="productCatalog" class="panel panel-success collapse">
+            <div class="panel-heading">Каталог продуктов</div>
+              <div class="list-group">
+                <a href="#" class="list-group-item"> <span class="badge">2</span> E-book</a>              
+                <a href="#" class="list-group-item"> <span class="badge">6</span> Smartphone</a>
+                <a href="#" class="list-group-item"> <span class="badge">4</span> Tablet</a>
+              </div>
+          </div>
+          <!-- /Categories -->
+        </aside>
+
+  			<main class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+  				<div id="productlist">
+  					<div class="row">
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+  							<div id="product27000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/Iphone11.jpg" alt="Apple Iphone 11 Pro">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 5.8" / Камера: 12Мп+12Мп+12Мп / RAM: 4 Гб / Зеленый / 3046 мАч / Вес: 188 г / WiFi / Bluetooth / Lightning</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">Iphone 11 Pro</h4>
+  									<div class="code">
+  										Code:27000
+  									</div>
+  									<div class="price">
+  										79990 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="27000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">Smartphone</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">Apple</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product28000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/Samsung S20.png" alt="Samsung Galaxy S20">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 6.2" / Камера: 64Мп+12Мп+12Мп / RAM: 8 Гб / Серый / 4000 мАч / Вес: 163 г / WiFi / Bluetooth / USB</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">Galaxy S20</h4>
+  									<div class="code">
+  										Code:28000
+  									</div>
+  									<div class="price">
+  										54990 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="28000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">Smartphone</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">Samsung</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product29000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/Ipad Pro.png" alt="Apple Ipad Pro">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 11" / Камера: 12Мп / RAM: 3 Гб / Серый / 4000 мАч / Вес: 468 г / WiFi / Bluetooth / USB</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">Ipad Pro</h4>
+  									<div class="code">
+  										Code:29000
+  									</div>
+  									<div class="price">
+  										117000 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="29000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">Tablet</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">Apple</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product30000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/Redmi Note 10 Pro.jfif" alt="Xiaomi Redmi Note 10 Pro">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 6.47" / Камера: 108Мп / RAM: 8 Гб / Серый / 5260 мАч / Вес: 208 г / WiFi / Bluetooth / USB</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">Redmi Note 10 Pro</h4>
+  									<div class="code">
+  										Code:30000
+  									</div>
+  									<div class="price">
+  										44990 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="30000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">Smartphone</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">Xiaomi</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product31000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/PocketBook.jpg" alt="PocketBook 616">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 6" / Тип матрицы: E lnk Carta / Разрешение: 1024х758 / Память: 8 Гб / Вес 155 г</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">PocketBook 616</h4>
+  									<div class="code">
+  										Code:31000
+  									</div>
+  									<div class="price">
+  										8990 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="31000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">E-book</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">PocketBook</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product32000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/Huawei MediaPad.jpg" alt="Huawei MediaPad M5 Lite">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 8" / Камера: 13Мп / RAM: 3 Гб / Серый / 5100 мАч / Вес 310 г / WiFi / Bluetooth / USB</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">MediaPad M5 Lite</h4>
+  									<div class="code">
+  										Code:32000
+  									</div>
+  									<div class="price">
+  										15490 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="32000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">Tablet</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">Huawei</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product33000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/Honor 20 Lite.jpg" alt="Honor 20 Lite">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 6.15" / Камера: 48Мп / RAM: 4 Гб / Бирюзовый / 3340 мАч / Вес 159 г / WiFi / Bluetooth / USB</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">Honor 20 Lite</h4>
+  									<div class="code">
+  										Code:32000
+  									</div>
+  									<div class="price">
+  										16990 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="32000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">Smartphone</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">Honor</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product34000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/Iphone SE.jpg" alt="Apple Iphone SE">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 4.7" / Камера: 12Мп / RAM: 3 Гб / Серый / 2790 мАч / Вес 148 г / WiFi / Bluetooth / Lightning</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">Iphone SE</h4>
+  									<div class="code">
+  										Code:34000
+  									</div>
+  									<div class="price">
+  										38990 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="34000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">Smartphone</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">Apple</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product35000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/PocketBook740.jpg" alt="PocketBook740">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 7.8" / Тип матрицы: E lnk Carta / Разрешение: 1872x1404 / Память: 8 Гб / Вес 210 г</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">PocketBook 740</h4>
+  									<div class="code">
+  										Code:35000
+  									</div>
+  									<div class="price">
+  										17990 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="35000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">E-book</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">PocketBook</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product36000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/Galaxy Tab.jpg" alt="Samsung Galaxy Tab S6">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 10.4" / Камера: 8Мп / RAM: 4 Гб / Серый / 7040 мАч / Вес 465 г / WiFi / Bluetooth / USB</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">Galaxy Tab S6</h4>
+  									<div class="code">
+  										Code:36000
+  									</div>
+  									<div class="price">
+  										28990 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="36000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">Tablet</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">Samsung</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product37000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/Hauwei P30.jpg" alt="Huawei P30">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 6.1" / Камера: 40Мп+16Мп / RAM: 6 Гб / Аврора / 3650 мАч / Вес 165 г / WiFi / Bluetooth / USB</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">Huawei P30</h4>
+  									<div class="code">
+  										Code:37000
+  									</div>
+  									<div class="price">
+  										30990 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="37000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">Smartphone</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">Huawei</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+
+  						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+  							<div id="product38000" class="panel panel-default product">
+  								<div class="panel-body">
+  									<div class="thumbnail">
+  										<img src="media/Lenovo.jpg" alt="Lenovo Tab M10 Plus">
+  										<div class="desc">
+  											<div class="cell">
+  												<p><span class="title">Детали</span>Экран: диагональ 10.3" / Камера: 8Мп / RAM: 4 Гб / Серый / 5000 мАч / Вес 460 г / WiFi / Bluetooth / USB</p>
+  											</div>	
+  										</div>
+  									</div>
+  									<h4 class="name">Lenovo Tab M10</h4>
+  									<div class="code">
+  										Code:38000
+  									</div>
+  									<div class="price">
+  										17490 руб.
+  									</div>
+  									<a class="btn btn-primary pull-right buy-btn" data-id-product="38000">Купить</a>
+  									<ul class="list-group">
+									  <li class="list-group-item"><small>Категория:</small> <span class="category">Tablet</span></li>
+									  <li class="list-group-item"><small>Производитель:</small> <span class="producer">Lenovo</span></li>
+									</ul>
+  								</div>
+  							</div>
+  						</div>
+  					</div>
+  					<div class="text-center hidden-print">
+  						<img id="loadMoreIndicator" src="static/img/loading.gif" class="hidden" alt="Loading...">
+  						<a id="loadMore" class ="btn btn-success"> Показать больше </a>
+  					</div>
+  				</div>
+          			<div id="addProductPopup" class="modal" tabindex="-1">
+ 					 <div class="modal-dialog">
+  					  <div class="modal-content">
+   					   <div class="modal-header">
+       					 <h5 class="modal-title">Добавить товар в корзину</h5>
+       					 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        				  <span aria-hidden="true">&times;</span>
+        				 </button>
+      						</div>
+      					     <div class="modal-body row">
+       							 <div class="col-xs-12 col-sm-6">
+       							 	<div class="thumbnail">
+       							 		<img class="product-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="Product image">
+       							 	</div>
+       							 </div>
+       							 <div class="col-xs-12 col-sm-6">
+       							 	<h4 class="name text-center">Name</h4>
+       							 	<div class="list-group hidden-xs">
+    									  <span class="list-group-item"><small>Категория:</small> <span class="category">?</span></span>
+    									  <span class="list-group-item"><small>Производитель:</small> <span class="producer">?</span></span>
+									    </div> <br>
+									    <div class="list-group">
+									      <span class="list-group-item"> <small>Цена:</small> <span class="price">0</span></span> 
+               				  <span class="list-group-item"> <small>Количество:</small> <input type="number" class="count" value="1" min="1" max="10"></span> 
+               				  <span class="list-group-item"> <small>Стоимость:</small> <span class="cost">0</span></span>
+                     	</div>
+       							 </div>	
+      						 </div>
+      				    <div class="modal-footer">
+      				     <img id="addToCartIndicator" src="static/img/loading.gif" class="hidden" alt="Loading...">
+      				     <button id="addToCart" type="button" class="btn btn-primary">Добавить в корзину</button>
+      				     <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+     				    </div>
+    				  </div>
+  					</div>
+				</div>
+  			</main> 			
+  		</div>  		
+  	</div>
+
+  	<footer class="footer">
+  		<div class="container">
+  			<p class="text-center">Internet Shop by <b>Igor Eliseev</b><a href="http://google.com" target="_blank"> Google.com, 2020</a></p>
+  		</div>
+  	</footer>
+
+  	<script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/app.js"></script>
+  </body>
+</html>    

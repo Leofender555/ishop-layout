@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>IShop - layout</title>
+  	<link href="static/css/bootstrap.css" rel="stylesheet">
+  	<link href="static/css/bootstrap-theme.css" rel="stylesheet">
+  	<link href="static/css/font-awesome.css" rel="stylesheet">
+  	<link href="static/css/app.css" rel="stylesheet">
+  </head>
+  <body>
+  	<header>
+  		<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ishopNav" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="products.html">IShop</a>
+          </div>
+          <div class="collapse navbar-collapse" id="ishopNav">
+            <a href="#" class="btn btn-primary navbar-btn navbar-right sign-in"><i class="fa fa-facebook-official" aria-hidden="true"></i> Вход</a>
+          </div>
+        </div>
+      </nav>
+  	</header>
+
+  	<div class="container-fluid">
+  		<div class="row">
+  			<aside class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+          <div class="visible-xs-block xs-option-container">
+            <a class="pull-right" data-toggle="collapse" href="#productCatalog">Каталог продуктов <span class="caret"></span></a>
+            <a data-toggle="collapse" href="#findProducts">Найти продукт <span class="caret"></span></a>
+          </div>
+          <!-- Search form -->
+          <form action="products.html">
+            <div id="findProducts" class="panel panel-success collapse">
+              <div class="panel-heading">Найти продукт</div>
+              <div class="panel-body">
+                <div class="input-group">
+                  <input type="text" name="query" class="form-control" placeholder="Search query">
+                  <span class="input-group-btn">
+                    <a id="goSearch" class="btn btn-default">Найти</a>
+                  </span>
+                </div>
+                <div class="more-options">
+                  <a data-toggle="collapse" href="#searchOptions">Фильтры <span class="caret"></span></a>
+                </div>
+              </div>
+              <div id="searchOptions" class="collapse">
+                <div class="panel-heading">Категории</div>
+                <div class="panel-body categories">
+                  <label> <input type="checkbox" id="allCategories"> Все </label>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="category" value="1" class="search-option">E-book (78)</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="category" value="2" class="search-option">Smartphone (75)</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="category" value="3" class="search-option">Tablet (88)</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-heading">Производитель</div>
+                <div class="panel-body producers">
+                  <label> <input type="checkbox" id="allProducers"> Все </label>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="1" class="search-option">Apple (55) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="2" class="search-option">Honor (22) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="3" class="search-option">Huawei (31) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="4" class="search-option">Lenovo (14) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="5" class="search-option">PocketBook (9) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="6" class="search-option">Samsung (45) </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="producer" value="7" class="search-option">Xiaomi (18) </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- /Search form -->
+          <!-- Categories -->
+          <div id="productCatalog" class="panel panel-success collapse">
+            <div class="panel-heading">Каталог продуктов</div>
+              <div class="list-group">
+                <a href="#" class="list-group-item"> <span class="badge">78</span> E-book</a>              
+                <a href="#" class="list-group-item"> <span class="badge">75</span> Smartphone</a>
+                <a href="#" class="list-group-item"> <span class="badge">88</span> Tablet</a>
+              </div>
+          </div>
+          <!-- /Categories -->
+        </aside>
+
+  			<main class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+  				<div id="shoppingCart">
+  					<div class="alert alert-warning hidden-print" role="alert">
+             Авторизуйтесь чтобы сделать заказ</div>
+             <table class="table table-bordered">
+               <thead>
+                 <tr>
+                   <th>Продукт</th>
+                   <th>Цена</th>
+                   <th>Количество</th>
+                   <th class="hidden-print">Действие</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr id="product27000" class="item">
+                   <td class="text-center"><img class="small" src="media/Iphone11.jpg" alt="Apple Iphone 11 Pro"><br>Apple Iphone 11 Pro</td>
+                   <td class="price">79990 руб.</td>
+                   <td class="count">1</td>
+                   <td class="hidden-print">
+                     <a class="btn btn-danger remove-product" data-id-product="27000" data-count="1">Удалить(1)</a>
+                   </td>
+                 </tr>
+                  <tr id="product28000" class="item">
+                   <td class="text-center"><img class="small" src="media/Samsung S20.png" alt="Samsung Galaxy S20"><br>Samsung Galaxy S20</td>
+                   <td class="price">54990 руб.</td>
+                   <td class="count">2</td>
+                   <td class="hidden-print">
+                     <a class="btn btn-danger remove-product" data-id-product="28000" data-count="1">Удалить(1)</a>
+                     <br><br>
+                     <a class="btn btn-danger remove-product all" data-id-product="28000" data-count="2">Удалить все</a>
+                   </td>
+                 </tr>
+                  <tr>
+                  <td colspan="2" class="text-right"><strong>Сумма:</strong></td>
+                  <td colspan="2" class="total">189970 руб.</td>
+                </tr>    
+               </tbody>
+             </table>
+             <div class="row hidden-print">
+               <div class="col-md-4 col-md-offset-4 col-lg-2 col-lg-offset-5">
+                 <a class="btn btn-primary btn-block"><i class="fa fa-facebook-official" aria-hidden="true"></i> Вход</a>
+               </div>
+             </div>
+  				</div>
+  			</main> 			
+  		</div>  		
+  	</div>
+
+  	<footer class="footer">
+  		<div class="container">
+  			<p class="text-center">Internet Shop by <b>Igor Eliseev</b><a href="http://google.com" target="_blank"> Google.com, 2020</a></p>
+  		</div>
+  	</footer>
+
+  	<script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/app.js"></script>
+</html>    
